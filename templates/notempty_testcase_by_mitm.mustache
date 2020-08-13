@@ -1,0 +1,23 @@
+
+    def test_{{caseName}}(self):
+        r=requests.request(
+            {{method}},
+            url={{url}},
+            params={
+                {{#params}}
+                    {{.}}
+                {{/params}}
+            },
+            data={
+                {{#data}}
+                    {{.}}
+                {{/data}}
+            },
+            cookies={
+                {{#cookies}}
+                    {{.}}
+                {{/cookies}}
+            },
+            verify =False
+        )
+        assert r.status_code == 200
